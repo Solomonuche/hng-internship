@@ -1,0 +1,8 @@
+# virtual environment
+django-venv
+
+# Environment variable
+.env
+
+# binary file
+*.pyc
