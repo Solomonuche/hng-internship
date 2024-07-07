@@ -27,7 +27,7 @@ class CreateSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         """perform create
         """
-
+        user = self.context['user']
         name = validated_data['name']
         description = validated_data['description']
        
@@ -35,7 +35,7 @@ class CreateSerializer(serializers.ModelSerializer):
             name=name,
             description=description,
         )
-
+        org.users.add(user)
         return org
 
 

@@ -103,7 +103,7 @@ class OrgsListCreateView(APIView):
         serializer = CreateSerializer(data=data)
         
         if serializer.is_valid():
-            user = serializer.save()
+            user = serializer.save(user=request.user)
             payload = {
                 "status": "success",
                 "message": "Organisation created successfully",
